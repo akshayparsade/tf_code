@@ -135,7 +135,7 @@ resource "aws_lb" "mylb" {
   load_balancer_type = "application"
 
   security_groups = [ aws_security_group.app_sg.id ]
-  subnets = [ aws_subnet.sub1, aws_subnet.sub2]
+  subnets = [ aws_subnet.sub1.id, aws_subnet.sub2.id ]
   tags = {
     Name = "Webapp"
   }  
