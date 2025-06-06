@@ -112,7 +112,7 @@ resource "aws_instance" "webvm1" {
   instance_type = "t2.micro"
   vpc_security_group_ids = [ aws_security_group.app_sg.id ]
   subnet_id = aws_subnet.sub1.id
-  user_data = base64decode(file("userdata.sh"))
+  user_data = (file("userdata.sh"))
   tags = {
     Name = "HelloWorld"
   }
@@ -123,7 +123,7 @@ resource "aws_instance" "webvm2" {
   instance_type = "t2.micro"
   vpc_security_group_ids = [ aws_security_group.app_sg.id ]
   subnet_id = aws_subnet.sub2.id
-  user_data = base64decode(file("userdata1.sh"))
+  user_data = (file("userdata1.sh"))
   tags = {
     Name = "HelloWorld"
   }
